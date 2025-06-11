@@ -1,0 +1,161 @@
+.navbar {
+  background: linear-gradient(to right, #1B2D57, #54BBAB);
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 38px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  gap: 20px;
+}
+
+.nav_logo {
+  width: 200px;
+  flex-shrink: 0;
+}
+
+.navbar__nav {
+  display: flex;
+  flex: 1; /* Hace que crezca dentro del contenedor padre */
+  justify-content: space-evenly; /* O prueba con space-between o space-around */
+  gap: 2rem; /* Espacio entre enlaces */
+  align-items: center;
+}
+
+.navbar_link {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s;
+}
+
+.navbar_link:hover {
+  color: #f0f0f0;
+}
+
+/* Contenedor del buscador*/
+.navbar__search {
+  position: relative;
+  height: 39px;
+  width: 51px;
+  border-radius: 50px;
+   background: white;
+    transition: 0.4s ease ease-in-out; /* Transición suave para el contenedor */
+     z-index: 1001;
+}
+
+/* Lupa fija a la derecha del contenedor */
+.search_icon {
+  position: absolute;
+ left: 8px;
+    top: 47%;
+  transform: translateY(-50%);
+  width: 33px;
+  cursor: pointer;
+  z-index: 12;
+}
+
+/* Input que se expande hacia la izquierda */
+.navbar__search_input {
+  position: absolute;
+  right: 0; 
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 39px;
+  padding: 0px 40px 0 16px;
+  border-radius: 50px;
+  border: none;
+  background: white;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  transition: width 0.4s ease ease-in-out;
+  z-index: 10;
+  opacity: 0;
+   font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  text-overflow: clip;
+}
+
+.navbar__search.expanded .navbar__search_input{
+  width: 280px;
+  opacity: 1;
+   box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+
+}
+
+/* Estilos para el menú desplegable */
+.navbar__dropdown-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.navbar__dropdown-trigger {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.navbar__dropdown-icon {
+  width: 17px;
+  transition: transform 0.3s ease;
+}
+
+.navbar__dropdown-icon:hover {
+  opacity: 0.8;
+}
+
+.navbar__dropdown-menu {
+position: absolute;
+top: 55px;
+left: -18px;
+background: white;
+  min-width: 200px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+  z-index: 1002;
+  padding: 10px 0;
+  animation: fadeIn 0.2s ease-out;
+    text-align: justify;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.navbar__dropdown-item {
+  display: block;
+  padding: 13px 20px;
+  color:#1B2D57;
+  text-decoration: none;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.navbar__dropdown-item:hover {
+  background-color: #64F0DA;
+}
+
+.navbar__search_input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(84, 187, 171, 0.5); /* Opcional: sombra verde suave */
+}
+
+/* Elimina el resaltado en navegadores WebKit (Chrome, Safari) */
+.navbar__search_input {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-focus-ring-color: transparent;
+}
+
+.navbar_link.active {
+  color: #64F0DA;
+}
