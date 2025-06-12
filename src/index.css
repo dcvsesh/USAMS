@@ -1,5 +1,10 @@
+/* Tus resets y fuentes */
 @import url("../src/vendor/normalize.css");
 @import url("../src/vendor/fonts.css");
+
+/* Tus bloques */
 @import url("../src/blocks/navbar.css");
 @import url("../src/blocks/home.css");
 @import url("../src/blocks/footer.css");
+@import url("../src/blocks/productcard.css");
+@import url("../src/blocks/products.css");

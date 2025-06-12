@@ -1,0 +1,273 @@
+/*---------------------------------------------*/
+/* PRODUCTS LIST PAGE                          */
+/*---------------------------------------------*/
+
+.products-page {
+  max-width: 1200px;
+  margin: 66px auto 134px;
+  padding: 0 20px;
+}
+
+.products-page__header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.category-title {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  margin: 0 0 15px;
+}
+
+.category-description {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 500;
+  font-size: 32px;
+  margin: 8px auto 20px;
+  text-align: center;
+}
+
+.search-results {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+  color: #333333;
+  margin: 8px 0 20px;
+}
+
+/*---------------------------------------------*/
+/* SWIPER CONTAINER                            */
+/*---------------------------------------------*/
+
+.products-page__carousel {
+  position: relative;    /* para que las flechas absolute se anclen aquí */
+  overflow: visible;     /* ¡muy importante, que sea visible! */
+}
+
+/* Asegura que el wrapper interno también permita overflow visible */
+.products-page__carousel .swiper-wrapper {
+  overflow: visible !important;
+}
+
+/*---------------------------------------------*/
+/* PRODUCT CARD IN LIST (lista general)        */
+/*---------------------------------------------*/
+
+.product-card--list {
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 36px;
+}
+
+.product-card--thumb {
+  width: 100%;
+  max-width: 200px;
+  border-radius: 8px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform: scale(0.8);
+  opacity: 0.5;
+}
+
+.product-card--name {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  width: 250px;
+  margin: 32px auto 5px;
+  text-align: center;
+}
+
+.product-card--price {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 0 12px;
+}
+
+.btn-detail {
+  display: inline-block;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #54bbab;
+  background: transparent;
+  border: 1px solid #54bbab;
+  border-radius: 12.5px;
+  padding: 2px 12px;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-detail:hover {
+  background: #54bbab;
+  color: #fff;
+}
+
+/*---------------------------------------------*/
+/* NAVIGATION ARROWS                           */
+/*---------------------------------------------*/
+
+/* Selección específica dentro de products-page__carousel */
+.products-page__carousel .swiper-button-next,
+.products-page__carousel .swiper-button-prev {
+  position: absolute !important;    /* absolute dentro del contenedor */
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  color: #828181 !important;
+  width: 2rem !important;
+  height: 2rem !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  z-index: 1000 !important;
+}
+
+.products-page__carousel .swiper-button-next::after,
+.products-page__carousel .swiper-button-prev::after {
+  font-size: 1.5rem !important;
+}
+
+.products-page__carousel .swiper-button-prev {
+  left: -1.5rem !important;
+}
+
+.products-page__carousel .swiper-button-next {
+  right: -1.5rem !important;
+}
+
+/*---------------------------------------------*/
+/* SCALE & OPACITY FOR CENTERED SLIDES         */
+/*---------------------------------------------*/
+
+.products-page__carousel .swiper-slide-next .product-card--thumb,
+.products-page__carousel .swiper-slide-prev .product-card--thumb {
+  transform: scale(0.9);
+  opacity: 0.8;
+}
+
+.products-page__carousel .swiper-slide-active .product-card--thumb {
+  transform: scale(1.2);
+  opacity: 1;
+  z-index: 2;
+}
+
+/*———————————————————————————————————————
+  “Más Información” desactivado en slides no activos
+———————————————————————————————————————*/
+
+.products-page__carousel .swiper-slide:not(.swiper-slide-active) .btn-detail {
+  color: #A29D9D !important;
+  border-color: #A29D9D !important;
+}
+
+.products-page__carousel .swiper-slide:not(.swiper-slide-active) .btn-detail:hover {
+  background: #A29D9D !important;
+  color: #fff !important;
+}
+
+/*———————————————————————————————————————
+  Botón del slide activo conserva estilo original
+———————————————————————————————————————*/
+
+.products-page__carousel .swiper-slide-active .btn-detail {
+  color: #54bbab !important;
+  border-color: #54bbab !important;
+}
+
+/*---------------------------------------------*/
+/* RESPONSIVE BREAKPOINTS                      */
+/*---------------------------------------------*/
+
+/* Hasta 1024px: ajustar fuentes y márgenes */
+@media (max-width: 1024px) {
+  .products-page {
+    margin: 50px auto 100px;
+  }
+  .category-title {
+    font-size: 40px;
+  }
+  .category-description {
+    font-size: 28px;
+  }
+  .product-card--thumb {
+    max-width: 180px;
+  }
+  .product-card--name {
+    width: 220px;
+    font-size: 22px;
+  }
+  .product-card--price {
+    font-size: 20px;
+  }
+  .btn-detail {
+    font-size: 16px;
+    padding: 4px 10px;
+  }
+  .products-page__carousel .swiper-button-prev {
+    left: -1.2rem !important;
+  }
+  .products-page__carousel .swiper-button-next {
+    right: -1.2rem !important;
+  }
+}
+
+/* Hasta 768px: 2 slides, todo más compacto */
+@media (max-width: 768px) {
+  .products-page__carousel .swiper-slide {
+    width: 50% !important;
+  }
+  .product-card--thumb {
+    max-width: 150px;
+  }
+  .product-card--name {
+    width: 180px;
+    font-size: 20px;
+    margin: 24px auto 8px;
+  }
+  .product-card--price {
+    font-size: 18px;
+  }
+  .btn-detail {
+    font-size: 14px;
+    padding: 3px 8px;
+  }
+  .products-page__carousel .swiper-button-prev {
+    left: -1rem !important;
+  }
+  .products-page__carousel .swiper-button-next {
+    right: -1rem !important;
+  }
+}
+
+/* Hasta 480px: 1 slide, texto y botones más pequeños */
+@media (max-width: 480px) {
+  .products-page__carousel .swiper-slide {
+    width: 90% !important;
+  }
+  .category-title {
+    font-size: 28px;
+  }
+  .category-description {
+    font-size: 18px;
+  }
+  .product-card--thumb {
+    max-width: 120px;
+  }
+  .product-card--name {
+    width: auto;
+    font-size: 18px;
+    margin: 16px auto 6px;
+  }
+  .product-card--price {
+    font-size: 16px;
+  }
+  .btn-detail {
+    font-size: 12px;
+    padding: 2px 6px;
+  }
+  /* opcional: esconder flechas en móvil */
+  .products-page__carousel .swiper-button-prev,
+  .products-page__carousel .swiper-button-next {
+    display: none !important;
+  }
+}
