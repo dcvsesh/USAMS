@@ -113,7 +113,6 @@ export default function Products() {
           centeredSlides={true}
           loop={shouldLoop}
           navigation
-          pagination={{ clickable: true }}
           modules={[Navigation, Pagination]}
           className="products-page__carousel"
         >
