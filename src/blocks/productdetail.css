@@ -17,6 +17,7 @@ font-family: 'Open Sans', sans-serif;
 .product-detail__content {
   display: flex;
   flex-wrap: wrap;
+  gap: 40px;
 }
 
 /* Galería */
@@ -66,7 +67,7 @@ font-family: 'Open Sans Condensed', sans-serif;
   padding: 50px;
   padding-top: 20px;
   padding-bottom: 30px;
-  border-radius: 12px;
+  border-radius: 55px;
   margin-bottom: 24px;
   width: 500px;
 }
@@ -91,17 +92,26 @@ width: 115px;
 
 /* Purchase section */
 .product-detail__purchase {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.product-detail__price-colors {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 220px;
 }
 
 .product-detail__price {
   font-family: 'Open Sans', sans-serif;
-  font-size: 1.5rem;
+  font-size: 28px;
   font-weight: 700;
   margin: 0;
+  margin-bottom: 10px;
 }
 
 .product-detail__colors {
@@ -109,11 +119,14 @@ width: 115px;
   align-items: center;
   gap: 8px;
   font-family: 'Open Sans', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+
 }
 
 .color-dot {
-  width: 16px;
-  height: 16px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   display: inline-block;
 }
@@ -128,7 +141,7 @@ width: 115px;
 
 .btn-buy {
   font-family: 'Open Sans', sans-serif;
-  font-size: 0.875rem;
+  font-size: 20px;
   text-decoration: none;
   padding: 8px 16px;
   border: 1px solid #828181;
@@ -149,13 +162,6 @@ width: 115px;
   transform: scale(1.06);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .product-detail__content {
-    flex-direction: column;
-  }
-  .product-detail__purchase {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
+/*———————————————————————————————————————*
+  RESPONSIVE BREAKPOINTS
+*———————————————————————————————————————*/

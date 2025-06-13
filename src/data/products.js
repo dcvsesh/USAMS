@@ -55,6 +55,8 @@ const allProducts = [
       { icon: voltio,   label: "Pantalla digital" },
       { icon: diamante, label: "Diseño transparente" },
     ],
+    amazonLink: "https://www.amazon.com.mx",
+    mercadoLink: "https://www.mercadolibre.com.mx",
   },
 
   // ——— 2) Cable PD 60W ———
@@ -76,6 +78,8 @@ const allProducts = [
       { icon: diamante, label: "Diseño elegante" },
       { icon: seguridad,label: "Conexión segura y estable" },
     ],
+        amazonLink: "https://www.amazon.com.mx",
+    mercadoLink: "https://www.mercadolibre.com.mx",
   },
 
   // ——— 3) Cable 100W PD U71 ———
@@ -97,6 +101,8 @@ const allProducts = [
       { icon: almacen,  label: "Velcro para fácil almacenamiento" },
       { icon: medida,   label: "Longitud práctica 1.20 m" },
     ],
+        amazonLink: "https://www.amazon.com.mx",
+    mercadoLink: "https://www.mercadolibre.com.mx",
   },
 
   // ——— 4) Cargador pared + cable ———
@@ -118,6 +124,8 @@ const allProducts = [
       { icon: celular,  label: "Cable anti-tirón" },
       { icon: diamante, label: "Diseño moderno" },
     ],
+        amazonLink: "https://www.amazon.com.mx",
+    mercadoLink: "https://www.mercadolibre.com.mx",
   },
 
   // ——— 5) KIT PD20W + PD60W ———
@@ -139,6 +147,8 @@ const allProducts = [
       { icon: seguridad,    label: "Protección avanzada" },
       { icon: superenergia, label: "Solución completa" },
     ],
+        amazonLink: "https://www.amazon.com.mx",
+    mercadoLink: "https://www.mercadolibre.com.mx",
   },
 
   // ——— 6) Cargador PD 30W ———
@@ -160,6 +170,8 @@ const allProducts = [
       { icon: diamante,  label: "Alta calidad" },
       { icon: celular,   label: "Ideal dispositivos modernos" },
     ],
+        amazonLink: "https://www.amazon.com.mx",
+    mercadoLink: "https://www.mercadolibre.com.mx",
   },
 
   // ——— 7) Audífono Deportivo ———
@@ -181,6 +193,8 @@ const allProducts = [
       { icon: blue,       label: "Bluetooth 5.3" },
       { icon: audifonos,  label: "Diseño deportivo" },
     ],
+        amazonLink: "https://www.amazon.com.mx",
+    mercadoLink: "https://www.mercadolibre.com.mx",
   },
 
   // ——— 8) Audífono Earbuds ———
@@ -202,6 +216,8 @@ const allProducts = [
       { icon: blue,       label: "Bluetooth 5.3" },
       { icon: touch,      label: "Control táctil" },
     ],
+        amazonLink: "https://www.amazon.com.mx",
+    mercadoLink: "https://www.mercadolibre.com.mx",
   },
 
   // ——— 9) Cargador Auto ———
@@ -223,6 +239,8 @@ const allProducts = [
       { icon: seguridad,label: "Seguridad total" },
       { icon: auto,    label: "Uso en movimiento" },
     ],
+        amazonLink: "https://www.amazon.com.mx",
+    mercadoLink: "https://www.mercadolibre.com.mx",
   },
 
   // ——— 10) Bolsa Protectora ———
@@ -244,6 +262,8 @@ const allProducts = [
       { icon: bolsa,   label: "Correa desmontable" },
       { icon: escudo,  label: "Protección y tranquilidad" },
     ],
+        amazonLink: "https://www.amazon.com.mx",
+    mercadoLink: "https://www.mercadolibre.com.mx",
   },
 
   // ——— 11) Batería Portátil ———
@@ -265,6 +285,8 @@ const allProducts = [
       { icon: bolsa,   label: "Con cordón" },
       { icon: bolsa,   label: "Portátil y compacto" },
     ],
+        amazonLink: "https://www.amazon.com.mx",
+    mercadoLink: "https://www.mercadolibre.com.mx",
   },
 ];
 

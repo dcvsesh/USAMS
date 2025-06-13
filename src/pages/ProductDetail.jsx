@@ -5,6 +5,9 @@ import { Helmet } from "react-helmet-async";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 import allProducts from "../data/products";
 
@@ -47,7 +50,7 @@ export default function ProductDetail() {
         </button>
 
         <div className="product-detail__content">
-          {/* ——— Galería de imágenes ——— */}
+          {/* Galería */}
           <div className="product-detail__gallery">
             <Swiper
               navigation
@@ -68,11 +71,12 @@ export default function ProductDetail() {
             </Swiper>
           </div>
 
-          {/* ——— Información del producto ——— */}
+          {/* Info */}
           <div className="product-detail__info">
             <h1 className="product-detail__title">{product.name}</h1>
             <p className="product-detail__desc">{product.description}</p>
 
+            {/* Features */}
             <div className="product-detail__features">
               {product.features?.map((f, i) => (
                 <div key={i} className="feature-items">
@@ -86,27 +90,39 @@ export default function ProductDetail() {
               ))}
             </div>
 
+            {/* Compra */}
             <div className="product-detail__purchase">
-              <p className="product-detail__price">{product.price}</p>
-
-              {product.colors && (
-                <div className="product-detail__colors">
-                  Colores:
-                  {product.colors.map((c, i) => (
-                    <span
-                      key={i}
-                      className="color-dot"
-                      style={{ backgroundColor: c }}
-                    />
-                  ))}
-                </div>
-              )}
+              <div className="product-detail__price-colors">
+                <p className="product-detail__price">{product.price}</p>
+                {product.colors && (
+                  <div className="product-detail__colors">
+                    Colores:
+                    {product.colors.map((c, i) => (
+                      <span
+                        key={i}
+                        className="color-dot"
+                        style={{ backgroundColor: c }}
+                      />
+                    ))}
+                  </div>
+                )}
+              </div>
 
               <div className="product-detail__buttons">
-                <a href="#" className="btn-buy">
+                <a
+                  href={product.amazonLink}
+                  className="btn-buy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Comprar en Amazon
                 </a>
-                <a href="#" className="btn-buy">
+                <a
+                  href={product.mercadoLink}
+                  className="btn-buy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Comprar en Mercado Libre
                 </a>
               </div>
