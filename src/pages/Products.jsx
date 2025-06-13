@@ -6,9 +6,7 @@ import { Helmet } from 'react-helmet-async';
 // Swiper
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import watermark from "../images/logoicono.png"
 
 import allProducts from '../data/products';
 
@@ -98,6 +96,9 @@ export default function Products() {
       </Helmet>
 
       <main className="products-page">
+         <div className="products-page__watermark">
+    <img src={watermark} alt="" className='watermark-logo'/>
+  </div>
         <header className="products-page__header">
           <h1 className="category-title">{title}</h1>
           <p className="category-description">{description}</p>
