@@ -1,3 +1,4 @@
+// src/pages/Products.jsx
 import React, { useEffect, useState } from 'react';
 import { useLocation, useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
@@ -81,8 +82,8 @@ export default function Products() {
     : 'Catálogo completo de productos USAMS';
 
   // Determinamos cuántos slides mostrar y si hacemos loop
-  const maxVisible = 3;
-  const slidesToShow = filtered.length < maxVisible ? 1 : maxVisible;
+  const MAX_VISIBLE = 3;
+  const slidesToShow = filtered.length < MAX_VISIBLE ? 1 : MAX_VISIBLE;
   const shouldLoop = filtered.length > slidesToShow;
 
   return (
@@ -109,7 +110,6 @@ export default function Products() {
 
         <Swiper
           slidesPerView={slidesToShow}
-          spaceBetween={30}
           centeredSlides={true}
           loop={shouldLoop}
           navigation
@@ -127,7 +127,7 @@ export default function Products() {
                 />
                 <h3 className="product-card--name">{prod.name}</h3>
                 <p className="product-card--price">{prod.price}</p>
-                <Link to={`/producto/${prod.id}`} className="btn-detail">
+                <Link to={`/producto/${prod.slug}`} className="btn-detail">
                   Más Información
                 </Link>
               </div>
