@@ -50,7 +50,7 @@ export default function ProductDetail() {
         </button>
 
         <div className="product-detail__content">
-          {/* Galería */}
+          {/* Galería principal */}
           <div className="product-detail__gallery">
             <Swiper
               navigation
@@ -71,7 +71,7 @@ export default function ProductDetail() {
             </Swiper>
           </div>
 
-          {/* Info */}
+          {/* Información */}
           <div className="product-detail__info">
             <h1 className="product-detail__title">{product.name}</h1>
             <p className="product-detail__desc">{product.description}</p>
@@ -129,6 +129,33 @@ export default function ProductDetail() {
             </div>
           </div>
         </div>
+
+           {product.additionalImages && (
+  <div className="product-detail__additional-gallery">
+    {/* Columna izquierda: img 1 y 3 */}
+    <div className="additional-column additional-column--left">
+      {[0, 2].map((i) => (
+        <img
+          key={i}
+          src={product.additionalImages[i]}
+          alt={`${product.name} extra ${i + 1}`}
+          className={`additional-image additional-image--${i + 1}`}
+        />
+      ))}
+    </div>
+    {/* Columna derecha: img 2 y 4 */}
+    <div className="additional-column additional-column--right">
+      {[1, 3].map((i) => (
+        <img
+          key={i}
+          src={product.additionalImages[i]}
+          alt={`${product.name} extra ${i + 1}`}
+          className={`additional-image additional-image--${i + 1}`}
+        />
+      ))}
+    </div>
+  </div>
+)}
       </main>
     </>
   );

@@ -1,5 +1,3 @@
-// src/data/products.js
-
 // ——— Imágenes de producto ———
 import cableShadow100w from "../images/cableshadow.jpg";
 import cable100wpd from "../images/cable100wpd.jpg";
@@ -35,6 +33,9 @@ import blue from "../images/blue.png";                 // Bluetooth
 import touch from "../images/touch.png";               // control táctil
 import auto from "../images/auto.png";                 // uso en movimiento
 import audifonos from "../images/audifonos.png"; 
+import bateria from "../images/bateria.png";        
+import carga from "../images/carga.png";     
+import compartimiento from "../images/compartimiento.png";      
 const allProducts = [
   // ——— 1) Cable Digital SHADOW ———
   {
@@ -48,12 +49,18 @@ const allProducts = [
     price: "$100.00 mxm",
     colors: ["#000000", "#F4F1F1", "#EED7F9"],
     features: [
-      { icon: rapido,   label: "100W Carga rápida" },
-      { icon: subir,    label: "Transferencia de datos" },
-      { icon: escudo,   label: "Revestimiento trenzado duradero" },
-      { icon: celular,  label: "Compatible Type-C" },
-      { icon: voltio,   label: "Pantalla digital" },
-      { icon: diamante, label: "Diseño transparente" },
+      { icon: bateriaIcon, label: "100W Carga rápida" },
+      { icon: subir,       label: "Transferencia de datos" },
+      { icon: almacen,     label: "Revestimiento trenzado duradero" },
+      { icon: carga,       label: "Compatible Type-C" },
+      { icon: touch,       label: "Pantalla digital" },
+      { icon: celular,     label: "Diseño transparente" },
+    ],
+    additionalImages: [
+      cableShadow100w,
+      cableShadow100w,
+      cableShadow100w,
+      cableShadow100w,
     ],
     amazonLink: "https://www.amazon.com.mx",
     mercadoLink: "https://www.mercadolibre.com.mx",
@@ -71,14 +78,20 @@ const allProducts = [
     price: "$100.00 mxm",
     colors: ["#000000", "#F4F1F1", "#EED7F9"],
     features: [
-      { icon: rapido,   label: "Carga rápida PD 60W" },
-      { icon: subir,    label: "Transferencia de datos" },
-      { icon: escudo,   label: "Revestimiento trenzado duradero" },
-      { icon: celular,  label: "Type-C a Type-C (1m)" },
-      { icon: diamante, label: "Diseño elegante" },
-      { icon: seguridad,label: "Conexión segura y estable" },
+      { icon: bateriaIcon, label: "Carga rápida PD 60W" },
+      { icon: subir,       label: "Transferencia de datos" },
+      { icon: almacen,     label: "Revestimiento trenzado duradero" },
+      { icon: carga,       label: "Type-C a Type-C (1m)" },
+      { icon: diamante,    label: "Diseño elegante" },
+      { icon: escudo,      label: "Conexión segura y estable" },
     ],
-        amazonLink: "https://www.amazon.com.mx",
+  additionalImages: [
+      cablepd60w,
+      cablepd60w,
+      cablepd60w,
+      cablepd60w,
+    ],
+    amazonLink: "https://www.amazon.com.mx",
     mercadoLink: "https://www.mercadolibre.com.mx",
   },
 
@@ -94,18 +107,24 @@ const allProducts = [
     price: "$100.00 mxm",
     colors: ["#000000", "#F4F1F1", "#EED7F9"],
     features: [
-      { icon: rapido,   label: "100W PD Carga rápida" },
-      { icon: subir,    label: "Transferencia de datos (5A)" },
-      { icon: escudo,   label: "Revestimiento duradero" },
-      { icon: nube,     label: "Compatible universal" },
-      { icon: almacen,  label: "Velcro para fácil almacenamiento" },
-      { icon: medida,   label: "Longitud práctica 1.20 m" },
+      { icon: bateriaIcon,     label: "100W PD Carga rápida" },
+      { icon: subir,           label: "Transferencia de datos (5A)" },
+      { icon: almacen,         label: "Revestimiento duradero" },
+      { icon: carga,           label: "Compatible universal" },
+      { icon: compartimiento,  label: "Velcro para almacenamiento" },
+      { icon: medida,          label: "Longitud práctica 1.20 m" },
     ],
-        amazonLink: "https://www.amazon.com.mx",
+    additionalImages: [
+      cable100wpd,
+      cable100wpd,
+      cable100wpd,
+      cable100wpd,
+    ],
+    amazonLink: "https://www.amazon.com.mx",
     mercadoLink: "https://www.mercadolibre.com.mx",
   },
 
-  // ——— 4) Cargador pared + cable ———
+  // ——— 4) Cargador Pared + Cable ———
   {
     id: 4,
     slug: "cargador-celular-pared-cable-type-c",
@@ -117,14 +136,20 @@ const allProducts = [
     price: "$100.00 mxm",
     colors: ["#000000", "#F4F1F1"],
     features: [
-      { icon: energia, label: "Doble puerto 2.1A" },
-      { icon: cartera, label: "Chip inteligente" },
-      { icon: escudo,   label: "Protección de carga" },
-      { icon: gota,     label: "Diseño antideslizante" },
-      { icon: celular,  label: "Cable anti-tirón" },
-      { icon: diamante, label: "Diseño moderno" },
+      { icon: bateriaIcon, label: "Doble puerto 2.1A" },
+      { icon: cartera,     label: "Chip inteligente" },
+      { icon: seguridad,   label: "Protección de carga" },
+      { icon: rapido,      label: "Diseño antideslizante" },
+      { icon: almacen,     label: "Cable anti-tirón" },
+      { icon: diamante,    label: "Diseño moderno" },
     ],
-        amazonLink: "https://www.amazon.com.mx",
+    additionalImages: [
+      cargadorparedtypec,
+      cargadorparedtypec,
+ cargadorparedtypec,
+     cargadorparedtypec
+    ],
+    amazonLink: "https://www.amazon.com.mx",
     mercadoLink: "https://www.mercadolibre.com.mx",
   },
 
@@ -140,18 +165,24 @@ const allProducts = [
     price: "$100.00 mxm",
     colors: ["#000000", "#F4F1F1"],
     features: [
-      { icon: rapido,       label: "Carga 20W + cable 60W" },
-      { icon: subir,        label: "Sincronización rápida" },
-      { icon: escudo,       label: "Revestimiento trenzado" },
-      { icon: nube,         label: "Compatibilidad total" },
-      { icon: seguridad,    label: "Protección avanzada" },
-      { icon: superenergia, label: "Solución completa" },
+      { icon: bateriaIcon,   label: "Carga 20W + cable 60W" },
+      { icon: subir,         label: "Sincronización rápida" },
+      { icon: almacen,       label: "Revestimiento trenzado" },
+      { icon: carga,         label: "Compatibilidad total" },
+      { icon: escudo,        label: "Protección avanzada" },
+      { icon: superenergia,  label: "Solución completa" },
     ],
-        amazonLink: "https://www.amazon.com.mx",
+    additionalImages: [
+    kitcargadorpared,
+      kitcargadorpared,
+     kitcargadorpared,
+  kitcargadorpared
+    ],
+    amazonLink: "https://www.amazon.com.mx",
     mercadoLink: "https://www.mercadolibre.com.mx",
   },
 
-  // ——— 6) Cargador PD 30W ———
+  // ——— 6) Cargador Pared Ultra Rápido PD 30W ———
   {
     id: 6,
     slug: "cargador-pared-ultra-rapido-pd-30w",
@@ -163,14 +194,20 @@ const allProducts = [
     price: "$100.00 mxm",
     colors: ["#000000"],
     features: [
-      { icon: rapido,    label: "30W Power Delivery" },
-      { icon: seguridad,label: "Carga segura" },
-      { icon: bolsa,     label: "Portátil y compacto" },
-      { icon: cartera,   label: "Certificación CE" },
-      { icon: diamante,  label: "Alta calidad" },
-      { icon: celular,   label: "Ideal dispositivos modernos" },
+      { icon: rapido,      label: "30W Power Delivery" },
+      { icon: seguridad,  label: "Carga segura" },
+      { icon: bolsa,      label: "Portátil y compacto" },
+      { icon: cartera,    label: "Certificación CE" },
+      { icon: diamante,   label: "Alta calidad" },
+      { icon: celular,    label: "Ideal para dispositivos modernos" },
     ],
-        amazonLink: "https://www.amazon.com.mx",
+    additionalImages: [
+     cargadoparedrapido,
+      cargadoparedrapido,
+      cargadoparedrapido,
+      cargadoparedrapido
+    ],
+    amazonLink: "https://www.amazon.com.mx",
     mercadoLink: "https://www.mercadolibre.com.mx",
   },
 
@@ -186,14 +223,20 @@ const allProducts = [
     price: "$150.00 mxm",
     colors: ["#000000"],
     features: [
-      { icon: bateriaIcon,label: "Batería 20H" },
-      { icon: rapido,     label: "Carga rápida" },
-      { icon: iman,       label: "Magnético" },
-      { icon: nube,       label: "Ultraligero" },
-      { icon: blue,       label: "Bluetooth 5.3" },
-      { icon: audifonos,  label: "Diseño deportivo" },
+      { icon: bateriaIcon, label: "Batería 20H" },
+      { icon: rapido,       label: "Carga rápida" },
+      { icon: iman,         label: "Magnético" },
+      { icon: nube,         label: "Ultraligero" },
+      { icon: blue,         label: "Bluetooth 5.3" },
+      { icon: audifonos,    label: "Diseño deportivo" },
     ],
-        amazonLink: "https://www.amazon.com.mx",
+    additionalImages: [
+    audifonodeportivo,
+  audifonodeportivo,
+  audifonodeportivo,
+  audifonodeportivo
+    ],
+    amazonLink: "https://www.amazon.com.mx",
     mercadoLink: "https://www.mercadolibre.com.mx",
   },
 
@@ -209,14 +252,20 @@ const allProducts = [
     price: "$120.00 mxm",
     colors: ["#000000", "#F4F1F1", "#EED7F9"],
     features: [
-      { icon: bateriaIcon,label: "6H + 26H batería" },
-      { icon: rapido,     label: "Carga rápida" },
-      { icon: audifonos,  label: "Sonido 13 mm" },
-      { icon: nube,       label: "Ligero y ergonómico" },
-      { icon: blue,       label: "Bluetooth 5.3" },
-      { icon: touch,      label: "Control táctil" },
+      { icon: bateriaIcon, label: "6H + 26H batería" },
+      { icon: rapido,       label: "Carga rápida" },
+      { icon: audifonos,    label: "Sonido 13 mm" },
+      { icon: nube,         label: "Ligero y ergonómico" },
+      { icon: blue,         label: "Bluetooth 5.3" },
+      { icon: touch,        label: "Control táctil" },
     ],
-        amazonLink: "https://www.amazon.com.mx",
+    additionalImages: [
+  audifonoearbuds,
+   audifonoearbuds,
+   audifonoearbuds,
+  audifonoearbuds
+    ],
+    amazonLink: "https://www.amazon.com.mx",
     mercadoLink: "https://www.mercadolibre.com.mx",
   },
 
@@ -232,14 +281,20 @@ const allProducts = [
     price: "$200.00 mxm",
     colors: ["#000000", "#F4F1F1"],
     features: [
-      { icon: energia, label: "Carga 45W" },
-      { icon: energia, label: "Doble carga" },
-      { icon: diamante,label: "Diseño transparente" },
-      { icon: cartera, label: "Certificación CE" },
-      { icon: seguridad,label: "Seguridad total" },
-      { icon: auto,    label: "Uso en movimiento" },
+      { icon: energia,      label: "Carga 45W" },
+      { icon: energia,      label: "Doble carga" },
+      { icon: diamante,     label: "Diseño transparente" },
+      { icon: cartera,      label: "Certificación CE" },
+      { icon: seguridad,    label: "Seguridad total" },
+      { icon: auto,     label: "Uso en movimiento" },
     ],
-        amazonLink: "https://www.amazon.com.mx",
+    additionalImages: [
+   cargadorauto,
+cargadorauto,
+cargadorauto,
+  cargadorauto
+    ],
+    amazonLink: "https://www.amazon.com.mx",
     mercadoLink: "https://www.mercadolibre.com.mx",
   },
 
@@ -255,14 +310,20 @@ const allProducts = [
     price: "$80.00 mxm",
     colors: ["#000000", "#F4F1F1"],
     features: [
-      { icon: gota,    label: "IP68 Waterproof" },
-      { icon: medida,  label: "Hasta 6.7″" },
-      { icon: touch,   label: "Táctil bajo agua" },
-      { icon: gota,    label: "Ideal para actividades acuáticas" },
-      { icon: bolsa,   label: "Correa desmontable" },
-      { icon: escudo,  label: "Protección y tranquilidad" },
+      { icon: gota,     label: "IP68 Waterproof" },
+      { icon: medida,   label: "Hasta 6.7″" },
+      { icon: touch,    label: "Táctil bajo agua" },
+      { icon: gota,     label: "Ideal para actividades acuáticas" },
+      { icon: bolsa,    label: "Correa desmontable" },
+      { icon: escudo,   label: "Protección y tranquilidad" },
     ],
-        amazonLink: "https://www.amazon.com.mx",
+    additionalImages: [
+    bolsaprotectora,
+   bolsaprotectora,
+  bolsaprotectora,
+ bolsaprotectora,
+    ],
+    amazonLink: "https://www.amazon.com.mx",
     mercadoLink: "https://www.mercadolibre.com.mx",
   },
 
@@ -278,14 +339,20 @@ const allProducts = [
     price: "$100.00 mxm",
     colors: ["#000000", "#F4F1F1", "#EED7F9"],
     features: [
-      { icon: energia, label: "Carga 45W" },
-      { icon: energia, label: "Carga doble" },
-      { icon: celular, label: "Entrada Micro/Type-C" },
-      { icon: voltio,  label: "LED indicador" },
-      { icon: bolsa,   label: "Con cordón" },
-      { icon: bolsa,   label: "Portátil y compacto" },
+      { icon: energia,  label: "Carga 45W" },
+      { icon: energia,  label: "Carga doble" },
+      { icon: celular,  label: "Entrada Micro/Type-C" },
+      { icon: voltio,   label: "LED indicador" },
+      { icon: bolsa,    label: "Con cordón" },
+      { icon: bolsa,    label: "Portátil y compacto" },
     ],
-        amazonLink: "https://www.amazon.com.mx",
+    additionalImages: [
+    bateriaportatil,
+  bateriaportatil,
+bateriaportatil,
+bateriaportatil,
+    ],
+    amazonLink: "https://www.amazon.com.mx",
     mercadoLink: "https://www.mercadolibre.com.mx",
   },
 ];
