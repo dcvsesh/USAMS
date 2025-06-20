@@ -1,0 +1,117 @@
+.novedades-page {
+  padding: 40px;
+}
+
+.novedades-grid {
+  display: grid;
+  /* 3 columnas de 429px cada una */
+  grid-template-columns: 350px 350px 350px;
+  /* 4 filas: la primera auto (para el título), y las 3 siguientes de 429px */
+  grid-template-rows: auto 350px 350px 350px;
+  grid-template-areas:
+    /* fila 1: img1 | título (ocupa col 2+3) */
+    "img1 title title"
+    /* fila 2: img2 | img3 | descripción */
+    "img2 img3 desc"
+    /* fila 3: img4 | img5 | img6 */
+    "img4 img5 img6"
+    /* fila 4: img7 | img8 | (vacío) */
+    "img7 img8 .";
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Cada cuadro de imagen */
+.new-item {
+  grid-area: unset;
+  width: 350px;
+  height: 350px;
+  border-radius: 40px;
+  background: linear-gradient(135deg, #B6E08E, #75D1CB);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  text-decoration: none;
+}
+
+/* El “Nuevo” solo en el primero */
+.new-item--1 .new-badge {
+  display: block;
+}
+.new-badge {
+    display: none;
+    position: absolute;
+    top: 284px;
+    left: 103px;
+    padding: 6px 20px;
+    border: 2px solid #000;
+    border-radius: 57px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    background: transparent;
+    color: black;
+}
+
+/* La imagen interna */
+.new-image {
+  max-width: 100%;
+  object-fit: contain;
+}
+
+/* Título y descripción */
+.new-title {
+    text-align: center;
+    width: 700px;
+    grid-area: title;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 80px;
+    font-weight: 700;
+    margin: 0;
+}
+.new-desc {
+  grid-area: desc;
+ font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 1.4;
+  margin: 0;
+  color: black;
+margin-left: 20px;
+}
+
+/* Asignamos cada área */
+.new-item--1 { grid-area: img1; }
+.new-item--2 { grid-area: img2; }
+.new-item--3 { grid-area: img3; }
+.new-item--4 { grid-area: img4; }
+.new-item--5 { grid-area: img5; }
+.new-item--6 { grid-area: img6; }
+.new-item--7 { grid-area: img7; }
+.new-item--8 { grid-area: img8; }
+
+/* Responsive: apila en móvil */
+@media (max-width: 768px) {
+  .novedades-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "title"
+         "desc"
+      "img1"
+      "img2"
+      "img3"
+      "img4"
+      "img5"
+      "img6"
+      "img7"
+      "img8";
+  }
+  .new-item {
+    width: 100%;
+    aspect-ratio: 1;
+  }
+}

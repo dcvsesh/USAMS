@@ -1,9 +1,8 @@
 import { useState, useRef, useEffect } from 'react';
-import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useNavigate, useLocation } from 'react-router-dom';
 import logo from '../images/usamslo.svg';
 import searchIcon from '../images/search.svg';
 import listaIcon from '../images/lista.svg';
-import { useLocation } from 'react-router-dom';
 
 function Navbar() {
   const [query, setQuery] = useState('');
@@ -12,28 +11,26 @@ function Navbar() {
   const navigate = useNavigate();
   const searchRef = useRef(null);
   const productsMenuRef = useRef(null);
+  const location = useLocation();
+  const isProductsActive = location.pathname.startsWith('/productos');
 
-  // Cierra los menús al hacer clic fuera o presionar ESC
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (searchRef.current && !searchRef.current.contains(event.target)) {
+    const handleClickOutside = (e) => {
+      if (searchRef.current && !searchRef.current.contains(e.target)) {
         setExpanded(false);
       }
-      if (productsMenuRef.current && !productsMenuRef.current.contains(event.target)) {
+      if (productsMenuRef.current && !productsMenuRef.current.contains(e.target)) {
         setShowProductsMenu(false);
       }
     };
-
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') {
         setExpanded(false);
         setShowProductsMenu(false);
       }
     };
-
     document.addEventListener('mousedown', handleClickOutside);
     document.addEventListener('keydown', handleKeyDown);
-    
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
       document.removeEventListener('keydown', handleKeyDown);
@@ -50,11 +47,8 @@ function Navbar() {
 
   const toggleProductsMenu = (e) => {
     e.preventDefault();
-    setShowProductsMenu(!showProductsMenu);
+    setShowProductsMenu((show) => !show);
   };
-
-const location = useLocation();
-const isProductsActive = location.pathname.startsWith('/productos');
 
   return (
     <header className="navbar">
@@ -66,31 +60,61 @@ const isProductsActive = location.pathname.startsWith('/productos');
 
       <nav className="navbar__nav">
         <NavLink className="navbar_link" to="/">Inicio</NavLink>
-        
+
+        {/* Nuevo enlace “Nosotros” */}
+        <NavLink
+          className="navbar_link"
+          to="/nosotros"
+        >
+          Nosotros
+        </NavLink>
+
         {/* Menú desplegable de Productos */}
         <div className="navbar__dropdown-container" ref={productsMenuRef}>
-  <div className="navbar__dropdown-trigger" onClick={toggleProductsMenu}>
-    <span 
-      className={`navbar_link ${isProductsActive ? 'active' : ''}`}
-    >
-      Productos
-    </span>
-    <img 
-      src={listaIcon} 
-      alt="Ver categorías" 
-      className="navbar__dropdown-icon"
-    />
-  </div>
-  {showProductsMenu && (
-    <div className="navbar__dropdown-menu">
-      <NavLink className="navbar__dropdown-item" to="/productos/carga" onClick={() => setShowProductsMenu(false)}>Carga</NavLink>
-      <NavLink className="navbar__dropdown-item" to="/productos/audio" onClick={() => setShowProductsMenu(false)}>Audio</NavLink>
-      <NavLink className="navbar__dropdown-item" to="/productos/gadgets" onClick={() => setShowProductsMenu(false)}>Gadgets</NavLink>
-      <NavLink className="navbar__dropdown-item" to="/productos/accesorios-autos" onClick={() => setShowProductsMenu(false)}>Accesorios de Autos</NavLink>
-    </div>
-  )}
-</div>
-        
+          <div className="navbar__dropdown-trigger" onClick={toggleProductsMenu}>
+            <span className={`navbar_link ${isProductsActive ? 'active' : ''}`}>
+              Productos
+            </span>
+            <img
+              src={listaIcon}
+              alt="Ver categorías"
+              className="navbar__dropdown-icon"
+            />
+          </div>
+          {showProductsMenu && (
+            <div className="navbar__dropdown-menu">
+              <NavLink
+                className="navbar__dropdown-item"
+                to="/productos/carga"
+                onClick={() => setShowProductsMenu(false)}
+              >
+                Carga
+              </NavLink>
+              <NavLink
+                className="navbar__dropdown-item"
+                to="/productos/audio"
+                onClick={() => setShowProductsMenu(false)}
+              >
+                Audio
+              </NavLink>
+              <NavLink
+                className="navbar__dropdown-item"
+                to="/productos/gadgets"
+                onClick={() => setShowProductsMenu(false)}
+              >
+                Gadgets
+              </NavLink>
+              <NavLink
+                className="navbar__dropdown-item"
+                to="/productos/accesorios-autos"
+                onClick={() => setShowProductsMenu(false)}
+              >
+                Accesorios de Autos
+              </NavLink>
+            </div>
+          )}
+        </div>
+
         <NavLink className="navbar_link" to="/galeria">Galería</NavLink>
         <NavLink className="navbar_link" to="/novedades">Novedades</NavLink>
         <NavLink className="navbar_link" to="/encuentranos">Encuéntranos en</NavLink>
@@ -101,13 +125,11 @@ const isProductsActive = location.pathname.startsWith('/productos');
           src={searchIcon}
           alt="Buscar"
           className="search_icon"
-          onClick={() => setExpanded(!expanded)}
+          onClick={() => setExpanded((e) => !e)}
         />
         {expanded && (
           <input
             type="text"
-            id="search"
-  name="search"
             placeholder="Buscar..."
             className="navbar__search_input"
             value={query}

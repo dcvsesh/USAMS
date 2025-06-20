@@ -64,6 +64,7 @@ const allProducts = [
     ],
     amazonLink: "https://www.amazon.com.mx",
     mercadoLink: "https://www.mercadolibre.com.mx",
+    isNew: true,
   },
 
   // ——— 2) Cable PD 60W ———
@@ -93,6 +94,7 @@ const allProducts = [
     ],
     amazonLink: "https://www.amazon.com.mx",
     mercadoLink: "https://www.mercadolibre.com.mx",
+      isNew: true,
   },
 
   // ——— 3) Cable 100W PD U71 ———
@@ -122,6 +124,7 @@ const allProducts = [
     ],
     amazonLink: "https://www.amazon.com.mx",
     mercadoLink: "https://www.mercadolibre.com.mx",
+      isNew: true,
   },
 
   // ——— 4) Cargador Pared + Cable ———
@@ -151,6 +154,7 @@ const allProducts = [
     ],
     amazonLink: "https://www.amazon.com.mx",
     mercadoLink: "https://www.mercadolibre.com.mx",
+      isNew: true,
   },
 
   // ——— 5) KIT PD20W + PD60W ———
@@ -180,6 +184,7 @@ const allProducts = [
     ],
     amazonLink: "https://www.amazon.com.mx",
     mercadoLink: "https://www.mercadolibre.com.mx",
+      isNew: true,
   },
 
   // ——— 6) Cargador Pared Ultra Rápido PD 30W ———
@@ -209,6 +214,7 @@ const allProducts = [
     ],
     amazonLink: "https://www.amazon.com.mx",
     mercadoLink: "https://www.mercadolibre.com.mx",
+      isNew: true,
   },
 
   // ——— 7) Audífono Deportivo ———
@@ -238,6 +244,7 @@ const allProducts = [
     ],
     amazonLink: "https://www.amazon.com.mx",
     mercadoLink: "https://www.mercadolibre.com.mx",
+      isNew: false,
   },
 
   // ——— 8) Audífono Earbuds ———
@@ -267,6 +274,7 @@ const allProducts = [
     ],
     amazonLink: "https://www.amazon.com.mx",
     mercadoLink: "https://www.mercadolibre.com.mx",
+      isNew: true,
   },
 
   // ——— 9) Cargador Auto ———
@@ -296,6 +304,7 @@ cargadorauto,
     ],
     amazonLink: "https://www.amazon.com.mx",
     mercadoLink: "https://www.mercadolibre.com.mx",
+      isNew: false,
   },
 
   // ——— 10) Bolsa Protectora ———
@@ -325,6 +334,7 @@ cargadorauto,
     ],
     amazonLink: "https://www.amazon.com.mx",
     mercadoLink: "https://www.mercadolibre.com.mx",
+      isNew: true,
   },
 
   // ——— 11) Batería Portátil ———
@@ -354,6 +364,7 @@ bateriaportatil,
     ],
     amazonLink: "https://www.amazon.com.mx",
     mercadoLink: "https://www.mercadolibre.com.mx",
+      isNew: false,
   },
 ];
 

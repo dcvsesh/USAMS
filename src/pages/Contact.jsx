@@ -1,19 +1,26 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 
-function Contact() {
+// importa tus logos
+import liverpoolLogo from '../images/liverpool.png';
+import walmartLogo  from '../images/walmart.png';
+
+export default function Contact() {
   return (
-    <>
-      <Helmet>
-        <title>USAMS - Inicio</title>
-        <meta name="description" content="Bienvenido a USAMS, tu tienda de accesorios tecnológicos." />
-      </Helmet>
-      <main>
-        <h2>Inicio</h2>
-        <p>Tu mejor opción en accesorios tecnológicos.</p>
-      </main>
-    </>
+    <main className="contact-page">
+    <section className="contact">
+  <h2 className="contact__title">Puntos de venta</h2>
+  <p className="contact__subtitle">
+    Llévate tus gadgets USAMS al instante en tiendas físicas cerca de ti.
+  </p>
+  <div className="contact__logos">
+    <div className="contact__logo-circle">
+      <img src={liverpoolLogo} alt="Liverpool" className="contact__logo-image" />
+    </div>
+    <div className="contact__logo-circle">
+      <img src={walmartLogo} alt="Walmart" className="contact__logo-image" />
+    </div>
+  </div>
+</section>
+    </main>
   );
 }
-
-export default Contact;

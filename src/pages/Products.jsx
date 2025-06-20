@@ -6,7 +6,9 @@ import { Helmet } from 'react-helmet-async';
 // Swiper
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
-import watermark from "../images/logoicono.png"
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 import allProducts from '../data/products';
 
@@ -46,7 +48,7 @@ const categoryMeta = {
 };
 
 export default function Products() {
-  const { category: slug } = useParams();        // e.g. "auto" or "accesorios-de-auto"
+  const { category: slug } = useParams(); 
   const key = slugToKey[slug];
   const meta = categoryMeta[key];
   const query = useQuery();
@@ -60,9 +62,11 @@ export default function Products() {
   useEffect(() => {
     let result = allProducts;
 
+    // Filtra por categoría si hay slug
     if (key) {
       result = result.filter(p => p.category === key);
     }
+    // Filtra por búsqueda si hay término
     if (searchTerm) {
       const term = normalize(searchTerm);
       result = result.filter(
@@ -71,6 +75,7 @@ export default function Products() {
           normalize(p.description).includes(term)
       );
     }
+
     setFiltered(result);
   }, [key, searchTerm]);
 
@@ -79,7 +84,7 @@ export default function Products() {
     ? meta.description
     : 'Catálogo completo de productos USAMS';
 
-  // Determinamos cuántos slides mostrar y si hacemos loop
+  // Lógica de cuantos slides mostrar y si hacer loop
   const MAX_VISIBLE = 3;
   const slidesToShow = filtered.length < MAX_VISIBLE ? 1 : MAX_VISIBLE;
   const shouldLoop = filtered.length > slidesToShow;
@@ -87,8 +92,8 @@ export default function Products() {
   return (
     <>
       <Helmet>
-        <title>{title} – USAMS</title>
-        <meta name="description" content={description} />
+        <title>{searchTerm ? 'Tu búsqueda USAMS' : `${title} – USAMS`}</title>
+        <meta name="description" content={searchTerm ? `Resultados para: ${searchTerm}` : description} />
         <link
           rel="canonical"
           href={`https://www.tudominio.com/productos${slug ? '/' + slug : ''}`}
@@ -96,16 +101,19 @@ export default function Products() {
       </Helmet>
 
       <main className="products-page">
-         <div className="products-page__watermark">
-    <img src={watermark} alt="" className='watermark-logo'/>
-  </div>
         <header className="products-page__header">
-          <h1 className="category-title">{title}</h1>
-          <p className="category-description">{description}</p>
-          {searchTerm && (
-            <p className="search-results">
-              Resultados para: <strong>{searchTerm}</strong>
-            </p>
+          {searchTerm ? (
+            <>
+              <h1 className="category-title">Tu búsqueda USAMS</h1>
+              <p className="search-results">
+                Resultados para: <strong>{searchTerm}</strong>
+              </p>
+            </>
+          ) : (
+            <>
+              <h1 className="category-title">{title}</h1>
+              <p className="category-description">{description}</p>
+            </>
           )}
         </header>
 

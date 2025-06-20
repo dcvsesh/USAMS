@@ -1,0 +1,51 @@
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+  margin-bottom: 150px;
+}
+
+.contact__title {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 64px;
+  width: 700px;
+  text-align: center;
+  margin: 0;
+}
+
+.contact__subtitle {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  margin-top: 12px;
+  color: black;
+}
+
+.contact__logos {
+  display: flex;
+  justify-content: center;
+  gap: 170px;
+  flex-wrap: wrap;
+}
+
+.contact__logo-circle {
+  width: 395px;
+  height: 395px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #54BBAB, #1B2D57);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+  transition: transform 0.3s ease;
+}
+
+.contact__logo-circle:hover {
+  transform: scale(1.1);
+}
+
+.contact__logo-image {
+  width: 250px;
+}
