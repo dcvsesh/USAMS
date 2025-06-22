@@ -1,3 +1,8 @@
+.contact-page{
+     margin-top: 90px;
+     padding-top: 1px;
+}
+
 .contact {
   display: flex;
   flex-direction: column;
@@ -9,8 +14,8 @@
 .contact__title {
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
-  font-size: 64px;
-  width: 700px;
+   font-size: 48px;
+  font-weight: 700;
   text-align: center;
   margin: 0;
 }

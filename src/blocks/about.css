@@ -1,0 +1,86 @@
+.about-video {
+    margin-top: 89px;
+    padding-top: 1px;
+  text-align: center;
+}
+.about-video__container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  width: 100%;
+}
+.about-video__player {
+  width: 100%;
+}
+
+.about-video__icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  opacity: 1;
+  z-index: 2;
+}
+
+/* ——— Quiénes somos + estadísticas ——— */
+.about-stats {
+display: flex;
+margin-top: 120px;
+margin-bottom: 100px;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-stats__title {
+ font-family: 'Open Sans', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  margin: 0 0 20px;
+  margin-top: 15px;
+}
+.about-stats__text {
+ font-family: 'Open Sans', sans-serif;
+  font-weight: 500;
+  font-size: 26px;
+    margin: 0;
+    margin-bottom: 20px;
+    margin-left: 150px;
+    margin-right: 150px;
+    line-height: 35px;
+}
+.about-stats__metrics {
+margin-top: 60px;
+    display: flex;
+    justify-content: space-around;
+    gap: 60px;
+    flex-wrap: wrap;
+    width: 90%;
+    margin-bottom: 50px;
+}
+
+.about-stats__metric {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-stats__circle {
+  background: #54BBAB;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 28px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+.about-stats__label {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+}
