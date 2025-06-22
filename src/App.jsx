@@ -56,7 +56,7 @@ function AnimatedRoutes() {
 export default function App() {
   return (
     <HelmetProvider>
-      <BrowserRouter>
+      <BrowserRouter basename="/USAMS">
         <Navbar />
         <AnimatedRoutes />
         <Footer />
